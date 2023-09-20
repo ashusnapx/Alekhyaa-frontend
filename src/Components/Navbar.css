@@ -1,40 +1,158 @@
 /* Navbar.css */
+
+/* Common styles */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #fff; /* Change to your desired background color */
+  background-color: #fff;
   padding: 10px 20px;
-  height:80px;
+  height: 80px;
   width: 80%;
-  margin:10px auto;
+  margin: 10px auto;
   border-radius: 10px;
 }
 
 .navbar-title {
   font-size: 24px;
-  color:rgb(73, 144, 236);
+  color: rgb(73, 144, 236);
   font-weight: bolder;
+  text-decoration: none;
 }
 
 .navbar-links {
   display: flex;
   gap: 20px;
-
 }
 
 .navbar-links a {
   text-decoration: none;
-  color: black; /* Link color */
+  color: black;
   font-size: 16px;
 }
 
 .signin-button {
   padding: 10px 20px;
-  background-color:black; /* Sign-up button background color */
-  color: #fff; /* Sign-up button text color */
+  background-color: black;
+  color: #fff;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   font-size: 16px;
+}
+
+/* Hamburger icon styles */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.bar {
+  background-color: #333;
+  height: 4px;
+  width: 25px;
+  margin: 3px 0;
+  transition: 0.4s;
+}
+
+.open .bar:nth-child(1) {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.open .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.open .bar:nth-child(3) {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
+
+/* Navbar.css */
+
+/* ... existing styles ... */
+
+.dark-mode-toggle {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  margin-right: 20px;
+  /* Adjust as needed */
+}
+
+.toggle-button {
+  width: 40px;
+  height: 20px;
+  background-color: #ccc;
+  border-radius: 10px;
+  position: relative;
+}
+
+.toggle-button::before {
+  content: '';
+  width: 18px;
+  height: 18px;
+  background-color: #fff;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: transform 0.3s;
+}
+
+.toggle-button.dark::before {
+  transform: translateX(20px);
+}
+
+/* Navbar.css */
+
+/* Dark Mode Styles */
+.dark-mode {
+  background-color: #333;
+  color: #fff;
+}
+
+.dark-mode .navbar-title {
+  color: #fff;
+}
+
+.dark-mode .navbar-links a {
+  color: #fff;
+}
+
+.dark-mode .signin-button {
+  background-color: #fff;
+  color: #333;
+}
+
+/* Media Query for Small Screens */
+@media screen and (max-width: 768px) {
+  .navbar-links {
+    display: none;
+    /* Hide links on small screens initially */
+  }
+
+  .hamburger {
+    display: flex;
+    /* Show hamburger on small screens */
+  }
+
+  .open .navbar-links {
+    display: flex;
+    /* Show links when navbar is open */
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 10px 0;
+  }
+
+  .open .navbar-links a {
+    display: block;
+    padding: 10px 20px;
+  }
 }

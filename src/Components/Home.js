@@ -2,6 +2,8 @@ import React from 'react';
 import './Home.css'; // Import your CSS file for styling
 import img from "../images/Modiji.jpg"
 import { Link } from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 function Home() {
   return (
     <div className="App">

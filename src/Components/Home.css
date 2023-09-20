@@ -1,35 +1,99 @@
 /* App.css */
 .App {
-    text-align: center;
-  }
-  
+  text-align: center;
+}
+
+.homepage-container {
+  display: flex;
+  flex-direction: column;
+  /* Adjusted for smaller screens */
+  align-items: center;
+  justify-content: center;
+  /* Adjusted for smaller screens */
+  padding: 20px;
+  text-align: center;
+  /* Adjusted for smaller screens */
+}
+
+.head {
+  font-size: 40px;
+  /* Adjusted for smaller screens */
+}
+
+.left-column {
+  padding: 20px;
+  text-align: center;
+  /* Centered for smaller screens */
+  margin: 0;
+  /* Removed margin for smaller screens */
+}
+
+.right-column {
+  padding: 20px;
+  margin: 0;
+  /* Removed margin for smaller screens */
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto 20px;
+  /* Centered and added margin for smaller screens */
+}
+
+/* Home.css */
+
+.homepage-container.dark {
+  background-color: #333;
+  color: #fff;
+}
+
+.head.dark {
+  font-size: 40px;
+  color: #fff;
+}
+
+.left-column.dark {
+  color: #fff;
+}
+
+.right-column.dark {
+  color: #fff;
+}
+
+img.dark {
+  filter: brightness(0.8);
+  /* Darken the image */
+}
+
+/* Responsive Adjustments */
+@media screen and (min-width: 768px) {
   .homepage-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /* height: 100vh; */
-    padding: 20px;
+    flex-direction: row;
+    /* Adjusted for larger screens */
+    justify-content: space-between;
+    /* Adjusted for larger screens */
   }
-  .head{
+
+  .head {
     font-size: 60px;
-    font-weight: bolder;
+    /* Reset to original size for larger screens */
   }
+
   .left-column {
-    flex: 1;
-    padding: 20px;
     text-align: left;
-    margin-left: 120px;
+    /* Reset to original alignment for larger screens */
+    margin: 0;
+    /* Reset to original margin for larger screens */
   }
-  
+
   .right-column {
-    flex: 1;
-    padding: 20px;
-    margin-right: 100px;
+    margin: 0;
+    /* Reset to original margin for larger screens */
   }
-  
+
   img {
-    max-width: 100%;
-    height: auto;
-    margin-right: 150px;
+    margin: 0;
+    /* Reset to original margin for larger screens */
   }
-  
+}
