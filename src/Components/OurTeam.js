@@ -6,54 +6,54 @@ const OurTeam = () => {
   const teamMembers = [
     {
       id: 1,
-      name: 'John Doe',
-      position: 'Founder & CEO',
+      name: 'Ayush Yadav',
+      position: 'Back End Developer',
       image: img1 // Replace with actual image path
     },
     {
       id: 2,
-      name: 'Jane Smith',
-      position: 'Lead Designer',
+      name: 'Ashutosh Kumar',
+      position: 'Front End Developer',
       image: img1, // Replace with actual image path
     },
     {
       id: 3,
-      name: 'Bob Johnson',
-      position: 'Lead Developer',
+      name: 'Yashraj Shukla',
+      position: 'Back End Developer',
       image: img1, // Replace with actual image path
     },
     {
       id: 4,
-      name: 'John Doe',
-      position: 'Founder & CEO',
+      name: 'Nirjhara Raghuwanshi',
+      position: 'Front End Developer',
       image: img1, // Replace with actual image path
     },
     {
       id: 5,
-      name: 'Jane Smith',
-      position: 'Lead Designer',
+      name: 'Yogendra Manawat',
+      position: 'Designer',
       image: img1, // Replace with actual image path
     },
     {
       id: 6,
-      name: 'Bob Johnson',
-      position: 'Lead Developer',
+      name: 'Sonia Singh',
+      position: 'Front End Developer',
       image: img1, // Replace with actual image path
     },
   ];
 
   return (
     <div className="team-container">
-      <h1>Our Team</h1>
+      <h1 style={{fontWeight:"bold",fontSize:"27px"}}>Our Team:</h1>
       <div className="team-members">
         {teamMembers.map((member) => (
-          <div className="team-member" key={member.id}>
+          <div className="team-member" style={{height:"200px",width:"200px",backgroundColor:"white"}} key={member.id}>
             <img
               src={member.image}
               alt={member.name}
               className="team-member-image"
             />
-            <h2>{member.name}</h2>
+            <h2 style={{fontSize:"16px"}}>{member.name}</h2>
             <p>{member.position}</p>
           </div>
         ))}
