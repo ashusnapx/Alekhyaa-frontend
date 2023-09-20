@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState} from 'react';
 import LoadingBar from './LoadingBar';
 import VideoDisplay from './VideoDisplay';
 import PermissionDialog from './PermissionDialog';
@@ -8,8 +8,22 @@ import "./GenerateVideo.css"
 function GenerateVideo() {
   const [loading, setLoading] = useState(false);
   const [videoId, setVideoId] = useState(null);
-  const [generatedVideoUrl, setGeneratedVideoUrl] = useState('setGeneratedVideoUrl={setGeneratedVideoUrl}');
+  const [generatedVideoUrl, setGeneratedVideoUrl] = useState('');
   const [pressReleaseLink, setPressReleaseLink] = useState('');
+
+  const [loadingProgress, setLoadingProgress] = useState(0);
+
+  // Function to calculate loading progress based on status
+  const calculateLoadingProgress = (status) => {
+    if (status === 'In Progress') {
+      return 50; // For example, you can set a specific value for 'In Progress' status.
+    } else if (status === 'Completed') {
+      return 100; // For example, you can set a specific value for 'Completed' status.
+    } else {
+      return 0; // Default progress value
+    }
+  };
+  
 
 
   const handleGenerateVideo = async (pressReleaseLink) => {
@@ -17,7 +31,7 @@ function GenerateVideo() {
     
     // Displaying loading bar
     setLoading(true);
-
+  
     // Sending a POST request to your backend
     try {
       const response = await fetch('/generate_video', {
@@ -32,14 +46,18 @@ function GenerateVideo() {
       // Updating state with the response
       setVideoId(data.video_id);
       setGeneratedVideoUrl(data.generated_video_url);
+  
+      // Calculate loading progress based on the received status
+      const progress = calculateLoadingProgress(data.status);
+      setLoadingProgress(progress);
     } catch (error) {
       console.error('Error:', error);
     }
-
+  
     // Hiding loading bar
     setLoading(false);
   };
-
+  
   const handleUploadVideo = async () => {
     if (videoId) {
       // Sending a POST request to upload the video
@@ -68,7 +86,7 @@ function GenerateVideo() {
    
     <div className='text-center'>
       
-      {!loading && <>
+      {!loading && !generatedVideoUrl && <>
       <input
         className='input-field'
         type="text"
@@ -81,7 +99,8 @@ function GenerateVideo() {
     
       <button className="generate-button" onClick={() => handleGenerateVideo(pressReleaseLink)}>Generate Video</button></>}
    
-      {loading && <LoadingBar />}
+      {loading && <h1 style={{fontSize:"15px", fontWeight:"bold",marginTop:"25px"}}>Generating Video...</h1> }
+      {loading && <LoadingBar progress={loadingProgress} />}
       {/* <VideoDisplay url={generatedVideoUrl} />
       <PermissionDialog onPermissionGranted={handleUploadVideo} /> */}
       {generatedVideoUrl && (

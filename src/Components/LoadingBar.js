@@ -1,8 +1,9 @@
 import React from 'react';
 
-function LoadingBar() {
+function LoadingBar({progress}) {
   return (
-  <><div className="loading-bar">Generating video</div>
+  <>
+  <div className="loading-bar" >{progress}</div>
   
   </>);
 }
