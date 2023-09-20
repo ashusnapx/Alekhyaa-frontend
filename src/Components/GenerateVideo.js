@@ -28,7 +28,12 @@ function GenerateVideo() {
 
   const handleGenerateVideo = async (pressReleaseLink) => {
     // Validating pressReleaseLink here (e.g., check if it's a valid URL).
-    
+    const urlPattern = /^(http[s]?:\/\/)?(www\.)?[-a-zA-Z0-9@:%._~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_.~#?&//=]*)$/;
+  if (!urlPattern.test(pressReleaseLink)) {
+    // console.error('Invalid URL');
+    alert("Invalid url")
+    return;
+  }
     // Displaying loading bar
     setLoading(true);
   
