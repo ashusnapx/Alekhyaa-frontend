@@ -4,12 +4,15 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {BrowserRouter} from 'react-router-dom';
+import { ThemeProvider } from './Components/ThemeContext';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <BrowserRouter>
+    <ThemeProvider>
   <React.StrictMode>
     <App />
-  </React.StrictMode>
+      </React.StrictMode>
+    </ThemeProvider>
   </BrowserRouter>
 );
 
