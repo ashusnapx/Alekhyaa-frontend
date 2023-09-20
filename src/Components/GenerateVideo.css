@@ -1,13 +1,13 @@
 .input-field{
-    margin: 15px;
+    margin: 10px;
     height: 60px;
-    width:230px;
+    width:250px;
     padding:10px;
     border: 1px solid white;
     border-radius: 6px;
 }
 .generate-button{
-    margin: 15px;
+    margin: 10px;
     height: 60px;
     width:150px;
     padding:10px;

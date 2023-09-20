@@ -9,6 +9,8 @@ body {
   background-repeat: no-repeat;
   background-size: cover; */
   background-color: rgb(229, 249, 250);
+  /* font-family: 'Open Sans', sans-serif; */
+  font-family: 'Montserrat', sans-serif;
 }
 
 code {

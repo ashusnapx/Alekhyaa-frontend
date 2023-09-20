@@ -6,7 +6,7 @@ import "./GenerateVideo.css"
 
 
 function GenerateVideo() {
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const [videoId, setVideoId] = useState(null);
   const [generatedVideoUrl, setGeneratedVideoUrl] = useState('');
   const [pressReleaseLink, setPressReleaseLink] = useState('');

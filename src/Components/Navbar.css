@@ -1,41 +1,40 @@
 /* Navbar.css */
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #fff; /* Change to your desired background color */
-    padding: 10px 20px;
-    height:80px;
-    width: 80%;
-    margin:10px auto;
-    border-radius: 10px;
-  }
-  
-  .navbar-title {
-    font-size: 24px;
-    color:rgb(73, 144, 236);
-    font-weight: bolder;
-  }
-  
-  .navbar-links {
-    display: flex;
-    gap: 20px;
-  
-  }
-  
-  .navbar-links a {
-    text-decoration: none;
-    color: black; /* Link color */
-    font-size: 16px;
-  }
-  
-  .signin-button {
-    padding: 10px 20px;
-    background-color:black; /* Sign-up button background color */
-    color: #fff; /* Sign-up button text color */
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-  }
-  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff; /* Change to your desired background color */
+  padding: 10px 20px;
+  height:80px;
+  width: 80%;
+  margin:10px auto;
+  border-radius: 10px;
+}
+
+.navbar-title {
+  font-size: 24px;
+  color:rgb(73, 144, 236);
+  font-weight: bolder;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 20px;
+
+}
+
+.navbar-links a {
+  text-decoration: none;
+  color: black; /* Link color */
+  font-size: 16px;
+}
+
+.signin-button {
+  padding: 10px 20px;
+  background-color:black; /* Sign-up button background color */
+  color: #fff; /* Sign-up button text color */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
