@@ -1,0 +1,35 @@
+/* App.css */
+.App {
+    text-align: center;
+  }
+  
+  .homepage-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* height: 100vh; */
+    padding: 20px;
+  }
+  .head{
+    font-size: 60px;
+    font-weight: bolder;
+  }
+  .left-column {
+    flex: 1;
+    padding: 20px;
+    text-align: left;
+    margin-left: 120px;
+  }
+  
+  .right-column {
+    flex: 1;
+    padding: 20px;
+    margin-right: 100px;
+  }
+  
+  img {
+    max-width: 100%;
+    height: auto;
+    margin-right: 150px;
+  }
+  
